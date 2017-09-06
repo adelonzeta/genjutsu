@@ -3,8 +3,8 @@
   "description": "A simple static site generator based on Gulp, Panini, Sass, and Babel.",
   "version": "1.0.0",
   "main": "app/index.js",
-  "repository": "https://github.com/adelonzeta/generator-genjutsu.git",
-  "author": "Adelon Zeta <adelonzeta@gmail.com>",
+  "repository": "https://github.com/adelonzeta/genjutsu.git",
+  "author": "Adelon Zeta <adelonzeta@gmail.com> (http://www.adelonzeta.com)",
   "license": "MIT",
   "scripts": {
     "test": "nyc mocha ./test/**/*.spec.js",
