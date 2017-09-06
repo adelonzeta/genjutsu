@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Panini Page Title Variable: Can be customized on
+    page's frontmatter -->
+    <title>{{ title }} - <%= name %></title>
+
+    <!--defer-->
+    <link rel="stylesheet" href="{{root}}styles/app.css">
+    <!--enddefer-->
+
+    <link href="{{root}}images/favicon.png" rel="icon" type="image/png">
+  </head>
+  <body>
+    <div class="container">
+      {{> body }} <!-- app/pages/**/*.html -->
+    </div>
+
+    <!--defer-->
+    <script type="text/javascript" src="{{root}}scripts/app.js"></script>
+    <!--enddefer-->
+  </body>
+</html>
