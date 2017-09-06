@@ -9,7 +9,7 @@
   "scripts": {
     "test": "nyc mocha ./test/**/*.spec.js",
     "report": "nyc report --reporter=html",
-    "codecov": "nyc report --reporter=lcov > coverage.lcov && codecov --token=:"
+    "codecov": "nyc report --reporter=lcov > coverage.lcov && codecov --token=642dce6c-1703-45bc-9ebb-cd62c19f44b5"
   },
   "files": [
     "app"
