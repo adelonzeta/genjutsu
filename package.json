@@ -1,0 +1,18 @@
+{
+  "name": "generator-genjutsu",
+  "description": "A simple static site generator based on Gulp, Panini, Sass, and Babel.",
+  "version": "0.0.0",
+  "main": "app/index.js",
+  "repository": "https://github.com/adelonzeta/generator-genjutsu.git",
+  "author": "Adelon Zeta <adelonzeta@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^1.1.1"
+  }
+}
