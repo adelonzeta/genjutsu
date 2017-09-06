@@ -1,7 +1,7 @@
 {
   "name": "generator-genjutsu",
   "description": "A simple static site generator based on Gulp, Panini, Sass, and Babel.",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "app/index.js",
   "repository": "https://github.com/adelonzeta/generator-genjutsu.git",
   "author": "Adelon Zeta <adelonzeta@gmail.com>",
