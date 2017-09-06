@@ -4,7 +4,6 @@
 [![dependencies](https://img.shields.io/librariesio/github/adelonzeta/genjutsu.svg)](https://www.npmjs.com/package/generator-genjutsu)
 [![build](https://img.shields.io/travis/adelonzeta/genjutsu.svg)](https://travis-ci.org/adelonzeta/genjutsu)
 [![coverage](https://img.shields.io/codecov/c/github/adelonzeta/genjutsu.svg)](https://codecov.io/gh/adelonzeta/genjutsu)
-[![downloads](https://img.shields.io/npm/dt/generator-genjutsu.svg)](https://www.npmjs.com/package/generator-genjutsu)
 [![MIT](https://img.shields.io/npm/l/generator-genjutsu.svg)](https://opensource.org/licenses/MIT)
 [![Follow](https://img.shields.io/github/followers/adelonzeta.svg?style=social&label=Follow)](https://github.com/adelonzeta)
 
