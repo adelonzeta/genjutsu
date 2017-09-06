@@ -4,7 +4,7 @@
   "version": "1.0.4",
   "main": "app/index.js",
   "repository": "https://github.com/adelonzeta/genjutsu.git",
-  "author": "Adelon Zeta <adelonzeta@gmail.com> (http://www.adelonzeta.com)",
+  "author": "Adelon Zeta <adelonzeta@gmail.com> (adelonzeta.com)",
   "license": "MIT",
   "scripts": {
     "test": "nyc mocha ./test/**/*.spec.js",
