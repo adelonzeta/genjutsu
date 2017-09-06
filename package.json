@@ -1,7 +1,7 @@
 {
   "name": "generator-genjutsu",
   "description": "Yeoman generator that scaffolds out a front-end web app for ninjas.",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "app/index.js",
   "repository": "https://github.com/adelonzeta/genjutsu.git",
   "author": "Adelon Zeta <adelonzeta@gmail.com> (http://www.adelonzeta.com)",
