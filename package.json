@@ -1,6 +1,6 @@
 {
   "name": "generator-genjutsu",
-  "description": "A simple static site generator based on Gulp, Panini, Sass, and Babel.",
+  "description": "Yeoman generator that scaffolds out a front-end web app for ninjas.",
   "version": "1.0.3",
   "main": "app/index.js",
   "repository": "https://github.com/adelonzeta/genjutsu.git",
