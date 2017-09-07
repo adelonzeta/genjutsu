@@ -6,11 +6,15 @@ const bold      = require('chalk').bold
 const green     = require('chalk').green.bold
 const replace   = require('lodash/replace')
 const startCase = require('lodash/startCase')
-const validate = require('./validate')
+const kebabCase = require('lodash/kebabCase')
 
 module.exports = class extends Generator {
   initializing() {
-    this.pkg = require('../package.json')
+    this.pkg               = require('../package.json')
+    this.nameValidation    = require('./name-validation')
+    this.versionValidation = require('./version-validation')
+    this.dependencies      = require('./dependencies')
+    this.devDependencies   = require('./dev-dependencies')
     try {
       this.repo = config['remote "origin"'].url
     } catch(e) {
@@ -24,13 +28,14 @@ module.exports = class extends Generator {
       type    : 'input',
       name    : 'name',
       message : 'name:',
-      default : this.appname
+      default : kebabCase(this.appname),
+      validate: this.nameValidation
     }, {
       type    : 'input',
       name    : 'version',
       message : 'version:',
       default : '1.0.0',
-      validate: validate
+      validate: this.versionValidation
     }, {
       type    : 'input',
       name    : 'description',
@@ -100,113 +105,19 @@ module.exports = class extends Generator {
   }
   _writingGulpTasks() {
     this.fs.copy(
-      this.templatePath('gulp-tasks/browser-sync.js'),
-      this.destinationPath('gulp-tasks/browser-sync.js')
-    )
-    this.fs.copy(
-      this.templatePath('gulp-tasks/browserify.js'),
-      this.destinationPath('gulp-tasks/browserify.js')
-    )
-    this.fs.copy(
-      this.templatePath('gulp-tasks/clean.js'),
-      this.destinationPath('gulp-tasks/clean.js')
-    )
-    this.fs.copy(
-      this.templatePath('gulp-tasks/ghpages.js'),
-      this.destinationPath('gulp-tasks/ghpages.js')
-    )
-    this.fs.copy(
-      this.templatePath('gulp-tasks/panini.js'),
-      this.destinationPath('gulp-tasks/panini.js')
-    )
-    this.fs.copy(
-      this.templatePath('gulp-tasks/purifycss.js'),
-      this.destinationPath('gulp-tasks/purifycss.js')
-    )
-    this.fs.copy(
-      this.templatePath('gulp-tasks/sass.js'),
-      this.destinationPath('gulp-tasks/sass.js')
-    )
-    this.fs.copy(
-      this.templatePath('gulp-tasks/watch.js'),
-      this.destinationPath('gulp-tasks/watch.js')
-    )
-    this.fs.copy(
-      this.templatePath('gulp-tasks/minify/css.js'),
-      this.destinationPath('gulp-tasks/minify/css.js')
-    )
-    this.fs.copy(
-      this.templatePath('gulp-tasks/minify/html.js'),
-      this.destinationPath('gulp-tasks/minify/html.js')
-    )
-    this.fs.copy(
-      this.templatePath('gulp-tasks/minify/images.js'),
-      this.destinationPath('gulp-tasks/minify/images.js')
-    )
-    this.fs.copy(
-      this.templatePath('gulp-tasks/minify/scripts.js'),
-      this.destinationPath('gulp-tasks/minify/scripts.js')
+      this.templatePath('gulp-tasks'),
+      this.destinationPath('gulp-tasks')
     )
   }
   _writingAppFiles() {
     this.fs.copy(
-      this.templatePath('app/images/favicon.png'),
-      this.destinationPath('app/images/favicon.png')
-    )
-    this.fs.copyTpl(
-      this.templatePath('app/layouts/default.html'),
-      this.destinationPath('app/layouts/default.html'),
-      { name: startCase(this.pkgName) }
-    )
-    this.fs.copy(
-      this.templatePath('app/pages/index.html'),
-      this.destinationPath('app/pages/index.html')
-    )
-    this.fs.copyTpl(
-      this.templatePath('app/partials/hello.html'),
-      this.destinationPath('app/partials/hello.html'),
-      {
-        title: startCase(this.pkgName),
-        description: this.pkgDescription
-      }
-    )
-    this.fs.copy(
-      this.templatePath('app/scripts/app.js'),
-      this.destinationPath('app/scripts/app.js')
-    )
-    this.fs.copy(
-      this.templatePath('app/styles/app.sass'),
-      this.destinationPath('app/styles/app.sass')
+      this.templatePath('app'),
+      this.destinationPath('app')
     )
   }
   install() {
-    this.yarnInstall([
-      'bootstrap@4.0.0-beta',
-      'jquery',
-      'popper.js'
-    ])
-    this.yarnInstall([
-      'babel-preset-es2015',
-      'babelify',
-      'browser-sync',
-      'browserify',
-      'browserify-shim',
-      'gulp',
-      'gulp-autoprefixer',
-      'gulp-clean',
-      'gulp-defer',
-      'gulp-gh-pages',
-      'gulp-htmlmin',
-      'gulp-imagemin',
-      'gulp-minify',
-      'gulp-purifycss',
-      'gulp-sass',
-      'gulp-sourcemaps',
-      'gulp-strip-css-comments',
-      'gulp-task-loader',
-      'panini',
-      'vinyl-source-stream'
-    ], { 'dev': true })
+    this.yarnInstall(this.dependencies)
+    this.yarnInstall(this.devDependencies, { 'dev': true })
   }
   end() {
     this.log(`Run ${green('yarn serve')} to start server.`)

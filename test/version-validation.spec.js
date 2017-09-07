@@ -1,13 +1,13 @@
 const assert = require('assert')
-const validate = require('../app/validate')
+const validate = require('../app/version-validation')
 
 describe('validate', () => {
   const invalid = 'Please enter a valid version number'
   const assertions = [
-    { expected: true, value: '0.0.0' },
-    { expected: true, value: '12.12.12' },
-    { expected: true, value: '123.123.123' },
-    { expected: true, value: '123456789.123456789.123456789' },
+    { expected: true,    value: '0.0.0' },
+    { expected: true,    value: '12.12.12' },
+    { expected: true,    value: '123.123.123' },
+    { expected: true,    value: '123456789.123456789.123456789' },
     { expected: invalid, value: '0' },
     { expected: invalid, value: '12' },
     { expected: invalid, value: '123' },
