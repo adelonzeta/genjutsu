@@ -8,7 +8,7 @@
 
 > [Yeoman](http://yeoman.io) generator that scaffolds out a front-end web app using **Gulp** for the build process, **Panini** for templating, **Sass** for CSS pre-processing, and **Babel** for the latest features of Javascript.
 
-<img width="100%" alt="Screenshot" src="https://github.com/adelonzeta/genjutsu/blob/master/screenshot.gif" />
+<img width="100%" alt="Screenshot" src="https://github.com/adelonzeta/genjutsu/raw/master/screenshot.gif" />
 
 ## Features
 Please see [gulpfile](https://github.com/adelonzeta/genjutsu/blob/master/app/templates/gulpfile.js) for up to date information on supported packages.
