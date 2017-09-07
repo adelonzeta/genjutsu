@@ -21,7 +21,7 @@ Please see our [gulpfile](https://github.com/adelonzeta/genjutsu/blob/master/app
 - Awesome optimization of all your assets
 - Automagically upload production build to Github Pages
 
-For more information on what this generator can do for you, take a look at the [gulp plugins](https://github.com/adelonzeta/genjutsu/blob/master/app/devdependencies.js) used in our ``` package.json ```.
+For more information on what this generator can do for you, take a look at the [gulp plugins](https://github.com/adelonzeta/genjutsu/blob/master/app/dev-dependencies.js) used in our ``` package.json ```.
 
 ## Usage
 Run the following after installing *yeoman* and *generator-genjutsu*.
