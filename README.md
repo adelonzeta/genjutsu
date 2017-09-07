@@ -10,6 +10,11 @@
 
 <img width="100%" alt="Screenshot" src="https://github.com/adelonzeta/genjutsu/raw/master/screenshot.gif" />
 
+## Installation
+```
+$ npm i -g generator-genjutsu
+```
+
 ## Features
 Please see [gulpfile](https://github.com/adelonzeta/genjutsu/blob/master/app/templates/gulpfile.js) for up to date information on supported packages.
 
