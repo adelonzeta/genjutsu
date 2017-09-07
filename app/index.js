@@ -6,6 +6,7 @@ const bold      = require('chalk').bold
 const green     = require('chalk').green.bold
 const replace   = require('lodash/replace')
 const startCase = require('lodash/startCase')
+const validate = require('./validate')
 
 module.exports = class extends Generator {
   initializing() {
@@ -29,12 +30,7 @@ module.exports = class extends Generator {
       name    : 'version',
       message : 'version:',
       default : '1.0.0',
-      validate: value => {
-        const pass = value.match(/\d*\.\d*\.\d*/)
-        if (pass)
-          return true
-        return 'Please enter a valid version number'
-      }
+      validate: validate
     }, {
       type    : 'input',
       name    : 'description',

@@ -4,7 +4,8 @@ const assert = require('yeoman-assert')
 
 describe('index', () => {
   before(done => {
-    helpers.run(path.join(__dirname, '../app')).on('end', done)
+    helpers.run(path.join(__dirname, '../app'))
+      .on('end', done)
   })
 
   it('creates expected files', () => {
@@ -35,10 +36,4 @@ describe('index', () => {
       'package.json',
     ])
   })
-
-  // it('should add dependencies', () => {
-  //   assert.fileContent('package.json', '"bootstrap"')
-  //   assert.fileContent('package.json', '"jquery"')
-  //   assert.fileContent('package.json', '"popper.js"')
-  // })
 })
