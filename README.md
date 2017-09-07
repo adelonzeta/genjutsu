@@ -11,7 +11,7 @@
 <img width="100%" alt="Screenshot" src="https://github.com/adelonzeta/genjutsu/blob/master/screenshot.gif" />
 
 ## Features
-Please see our [gulpfile](https://github.com/adelonzeta/genjutsu/blob/master/app/templates/gulpfile.js) for up to date information on what we support.
+Please see [gulpfile](https://github.com/adelonzeta/genjutsu/blob/master/app/templates/gulpfile.js) for up to date information on supported packages.
 
 - Built-in preview server with BrowserSync
 - enable ES2015 features using Babel and Browserify
