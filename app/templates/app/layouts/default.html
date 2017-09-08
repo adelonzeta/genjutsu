@@ -17,8 +17,13 @@
   </head>
   <body>
     <div class="container">
-      {{> body }} <!-- app/pages/**/*.html -->
+      <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+          {{> body }} <!-- app/pages/**/*.html -->
+        </div>
+      </div>
     </div>
+
 
     <!--defer-->
     <script type="text/javascript" src="{{root}}scripts/app.js"></script>
