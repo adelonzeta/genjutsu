@@ -13,7 +13,9 @@ describe('index', () => {
       'app/images/favicon.png',
       'app/layouts/default.html',
       'app/pages/index.html',
-      'app/partials/hello.html',
+      'app/partials/footer.html',
+      'app/partials/jumbotron.html',
+      'app/partials/navbar.html',
       'app/scripts/app.js',
       'app/styles/app.sass',
 
