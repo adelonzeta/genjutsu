@@ -41,31 +41,31 @@ A basic Genjutsu project usually looks something like this:
 ```
 root-directory
 ├── app
-|	├── images
-|	|	├── background-image.jpg
-|	|	...
-|	|	└── favicon.ico
-|	├── layouts
-|	|	├── admin.html
-|	|	└── default.html
-|	├── pages
-|	|	├── about.html
-|	|	...
-|	|	└── index.html
-|	├── partials
-|	|	├── footer.html
-|	|	...
-|	|	└── navbar.html
-|	├── scripts
-|	|	...
-|	|	└── app.js
-|	└── styles
-|	|	...
-|	|	└── app.sass
+|   ├── images
+|   |   ├── background-image.jpg
+|   |   ...
+|   |   └── favicon.ico
+|   ├── layouts
+|   |   ├── admin.html
+|   |   └── default.html
+|   ├── pages
+|   |   ├── about.html
+|   |   ...
+|   |   └── index.html
+|   ├── partials
+|   |   ├── footer.html
+|   |   ...
+|   |   └── navbar.html
+|   ├── scripts
+|   |   ...
+|   |   └── app.js
+|   └── styles
+|   |   ...
+|   |   └── app.sass
 ├── gulp-tasks
-|	├── browser-sync.js
-|	...
-|	└── watch.js
+|   ├── browser-sync.js
+|   ...
+|   └── watch.js
 ├── .gitignore
 ├── gulpfile.js
 ├── package.json
