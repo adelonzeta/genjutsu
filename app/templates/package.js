@@ -6,14 +6,16 @@
   "repository": "<%= repository %>",
   "author": "<%= author %>",
   "license": "<%= license %>",
+  <% if (framework == 'bootstrap-4' || framework == 'foundation') { %>
   "browser": {
-    "jquery": "./node_modules/jquery/dist/jquery.js",
-    "popper": "./node_modules/popper.js/dist/umd/popper.js"
+    "jquery": "./node_modules/jquery/dist/jquery.js"<% if (framework == 'bootstrap-4') { %>,
+    "popper": "./node_modules/popper.js/dist/umd/popper.js"<% } %>
   },
   "browserify-shim": {
-    "jquery": "$",
-    "popper": "Popper"
+    "jquery": "$"<% if (framework == 'bootstrap-4') { %>,
+    "popper": "Popper"<% } %>
   },
+  <% } %>
   "babel": {
     "presets": [
       "es2015"

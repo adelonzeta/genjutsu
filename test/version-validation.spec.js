@@ -1,4 +1,4 @@
-const assert = require('assert')
+const assert   = require('assert')
 const validate = require('../app/version-validation')
 
 describe('validate', () => {
