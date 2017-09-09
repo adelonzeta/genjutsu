@@ -1,8 +1,13 @@
-$white: #9390C3
-$blue: #D47C70
-
+<%_ if (framework == 'bootstrap-4') { _%>
 @import "bootstrap"
-
-body
-  background: #3A374F
-  color: $white
+<%_ } _%>
+<%_ if (framework == 'bourbon') { _%>
+@import "bourbon"
+@import "neat"
+<%_ } _%>
+<%_ if (framework == 'bulma') { _%>
+@import "bulma"
+<%_ } _%>
+<%_ if (framework == 'foundation') { _%>
+@import "foundation"
+<%_ } _%>

@@ -1,3 +1,17 @@
 <footer>
-  <p style="padding: 0.5rem 1rem">Cover template for <a href="https://getbootstrap.com">Bootstrap</a>, by <a href="https://github.com/adelonzeta">@adelonzeta</a>.</p>
+  <p style="padding: 0.5rem 1rem">
+    Cover template for
+    <%_ if (framework == 'bootstrap-4') { _%>
+    <a href="https://getbootstrap.com">Bootstrap</a>
+    <%_ } _%>
+    <%_ if (framework == 'bourbon') { _%>
+    <a href="http://bourbon.io/">Bourbon</a>
+    <%_ } _%>
+    <%_ if (framework == 'bulma') { _%>
+    <a href="http://bulma.io/">Bulma</a>
+    <%_ } _%>
+    <%_ if (framework == 'foundation') { _%>
+    <a href="http://foundation.zurb.com/">Foundation</a>
+    <%_ } _%>
+    , by <a href="https://github.com/adelonzeta">@adelonzeta</a>.</p>
 </footer>

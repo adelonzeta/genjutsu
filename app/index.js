@@ -11,6 +11,7 @@ const kebabCase = require('lodash/kebabCase')
 module.exports = class extends Generator {
   initializing() {
     this.pkg               = require('../package.json')
+    this.frameworkFilter   = require('./framework-filter')
     this.nameValidation    = require('./name-validation')
     this.versionValidation = require('./version-validation')
     this.dependencies      = require('./dependencies')
@@ -21,13 +22,24 @@ module.exports = class extends Generator {
       this.repo = null
     }
     this.log(bold(`${replace(this.pkg.name, 'generator-', '')} v${this.pkg.version}`))
-    this.log(yosay('Yow Ninja! Out of the box I include Bootstrap 4, jQuery, and a gulpfile to build your app.'))
+    this.log(yosay('Yow Ninja! Out of the box I include Panini, Sass, and a gulpfile to build your app.'))
   }
   prompting() {
     return this.prompt([{
+      type: 'list',
+      name: 'framework',
+      message: 'Which framework do you want to use?',
+      choices: [
+        'Bootstrap 4',
+        'Bourbon',
+        'Bulma',
+        'Foundation'
+      ],
+      filter: this.frameworkFilter
+    }, {
       type    : 'input',
       name    : 'name',
-      message : 'name:',
+      message : 'project name:',
       default : kebabCase(this.appname),
       validate: this.nameValidation
     }, {
@@ -60,6 +72,7 @@ module.exports = class extends Generator {
       message : 'license:',
       default : 'MIT'
     }]).then(answers => {
+      this.framework        = answers.framework
       this.pkgName          = answers.name
       this.pkgVersion       = answers.version
       this.pkgDescription   = answers.description
@@ -84,9 +97,10 @@ module.exports = class extends Generator {
   }
   _writingPackageJSON() {
     this.fs.copyTpl(
-      this.templatePath('_package.json'),
+      this.templatePath('package.js'),
       this.destinationPath('package.json'),
       {
+        framework   : this.framework,
         name        : this.pkgName,
         version     : this.pkgVersion,
         description : this.pkgDescription,
@@ -104,19 +118,21 @@ module.exports = class extends Generator {
     )
   }
   _writingGulpTasks() {
-    this.fs.copy(
+    this.fs.copyTpl(
       this.templatePath('gulp-tasks'),
-      this.destinationPath('gulp-tasks')
+      this.destinationPath('gulp-tasks'),
+      { framework: this.framework }
     )
   }
   _writingAppFiles() {
-    this.fs.copy(
+    this.fs.copyTpl(
       this.templatePath('app'),
-      this.destinationPath('app')
+      this.destinationPath('app'),
+      { framework: this.framework }
     )
   }
   install() {
-    this.yarnInstall(this.dependencies)
+    this.yarnInstall(this.dependencies[this.framework])
     this.yarnInstall(this.devDependencies, { 'dev': true })
   }
   end() {

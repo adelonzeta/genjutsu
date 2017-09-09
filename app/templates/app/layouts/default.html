@@ -16,6 +16,7 @@
     <link href="{{root}}images/favicon.png" rel="icon" type="image/png">
   </head>
   <body>
+    <%_ if (framework == 'bootstrap-4') { _%>
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-10 col-lg-8 col-xl-7">
@@ -23,8 +24,16 @@
         </div>
       </div>
     </div>
-
-
+    <%_ } _%>
+    <%_ if (framework == 'bourbon') { _%>
+    {{> body }} <!-- app/pages/**/*.html -->
+    <%_ } _%>
+    <%_ if (framework == 'bulma') { _%>
+    {{> body }} <!-- app/pages/**/*.html -->
+    <%_ } _%>
+    <%_ if (framework == 'foundation') { _%>
+    {{> body }} <!-- app/pages/**/*.html -->
+    <%_ } _%>
     <!--defer-->
     <script type="text/javascript" src="{{root}}scripts/app.js"></script>
     <!--enddefer-->
