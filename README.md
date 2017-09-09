@@ -11,7 +11,7 @@
 <img width="100%" alt="Screenshot" src="https://github.com/adelonzeta/genjutsu/raw/master/screenshot.gif" />
 
 ## Installation
-```
+```sh
 $ npm i -g generator-genjutsu
 ```
 
@@ -38,7 +38,7 @@ Run the following after installing *yeoman* and *generator-genjutsu*.
 
 ## Directory Structure
 A basic Genjutsu project usually looks something like this:
-```
+```sh
 root-directory
 ├── app
 |   ├── images
