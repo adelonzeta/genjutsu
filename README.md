@@ -35,3 +35,39 @@ Run the following after installing *yeoman* and *generator-genjutsu*.
 - ``` $ yarn serve  ``` - preview and watch for changes
 - ``` $ yarn prod   ``` - build for production
 - ``` $ yarn deploy ``` - deploy using gh-pages
+
+## Directory Structure
+A basic Genjutsu project usually looks something like this:
+```
+root-directory
+├── app
+|	├── images
+|	|	├── background-image.jpg
+|	|	...
+|	|	└── favicon.ico
+|	├── layouts
+|	|	├── admin.html
+|	|	└── default.html
+|	├── pages
+|	|	├── about.html
+|	|	...
+|	|	└── index.html
+|	├── partials
+|	|	├── footer.html
+|	|	...
+|	|	└── navbar.html
+|	├── scripts
+|	|	...
+|	|	└── app.js
+|	└── styles
+|	|	...
+|	|	└── app.sass
+├── gulp-tasks
+|	├── browser-sync.js
+|	...
+|	└── watch.js
+├── .gitignore
+├── gulpfile.js
+├── package.json
+└── yarn.lock
+```
