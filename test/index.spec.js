@@ -10,7 +10,7 @@ describe('index', () => {
 
   it('creates expected files', () => {
     assert.file([
-      'app/images/favicon.png',
+      'app/images/favicon.ico',
       'app/layouts/default.html',
       'app/pages/index.html',
       'app/partials/footer.html',
@@ -22,6 +22,7 @@ describe('index', () => {
       'gulp-tasks/browser-sync.js',
       'gulp-tasks/browserify.js',
       'gulp-tasks/clean.js',
+      'gulp-tasks/fonts.js',
       'gulp-tasks/ghpages.js',
       'gulp-tasks/panini.js',
       'gulp-tasks/purifycss.js',

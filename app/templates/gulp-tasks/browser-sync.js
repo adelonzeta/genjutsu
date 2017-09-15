@@ -18,5 +18,6 @@ module.exports.dependencies = [
   'panini',
   'sass',
   'browserify',
-  'minify:images'
+  'minify:images',
+  'fonts'
 ];

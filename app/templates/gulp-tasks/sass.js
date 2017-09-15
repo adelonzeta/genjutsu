@@ -8,18 +8,19 @@ module.exports = function() {
     .pipe(sass({
       includePaths: [
         <%_ if (framework == 'bootstrap-4') { _%>
-        'node_modules/bootstrap/scss'
+        'node_modules/bootstrap/scss',
         <%_ } _%>
         <%_ if (framework == 'bourbon') { _%>
         'node_modules/bourbon/app/assets/stylesheets',
-        'node_modules/bourbon-neat/app/assets/stylesheets'
+        'node_modules/bourbon-neat/app/assets/stylesheets',
         <%_ } _%>
         <%_ if (framework == 'bulma') { _%>
-        'node_modules/bulma'
+        'node_modules/bulma',
         <%_ } _%>
         <%_ if (framework == 'foundation') { _%>
-        'node_modules/foundation-sites/dist/css'
+        'node_modules/foundation-sites/dist/css',
         <%_ } _%>
+        'node_modules/font-awesome/scss'
       ]
     }))
     .pipe(sourcemaps.write())
