@@ -3,7 +3,6 @@ const yosay     = require('yosay')
 const parse     = require('parse-git-config')
 const config    = parse.sync()
 const bold      = require('chalk').bold
-const green     = require('chalk').green.bold
 const replace   = require('lodash/replace')
 const startCase = require('lodash/startCase')
 const kebabCase = require('lodash/kebabCase')
@@ -14,8 +13,6 @@ module.exports = class extends Generator {
     this.frameworkFilter   = require('./framework-filter')
     this.nameValidation    = require('./name-validation')
     this.versionValidation = require('./version-validation')
-    this.dependencies      = require('./dependencies')
-    this.devDependencies   = require('./dev-dependencies')
     try {
       this.repo = config['remote "origin"'].url
     } catch(e) {
@@ -30,9 +27,9 @@ module.exports = class extends Generator {
       name: 'framework',
       message: 'Which framework do you want to use?',
       choices: [
+        'Bulma',
         'Bootstrap 4',
         'Bourbon',
-        'Bulma',
         'Foundation'
       ],
       filter: this.frameworkFilter
@@ -132,10 +129,11 @@ module.exports = class extends Generator {
     )
   }
   install() {
-    this.yarnInstall(this.dependencies[this.framework])
-    this.yarnInstall(this.devDependencies, { 'dev': true })
-  }
-  end() {
-    this.log(`Run ${green('yarn serve')} to start server.`)
+    this.installDependencies({
+      npm: false,
+      bower: false,
+      yarn: true,
+      skipInstall: this.options['skip-install']
+    })
   }
 }
